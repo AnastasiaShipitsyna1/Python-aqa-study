@@ -11,4 +11,5 @@ var_2 = var_3
 print(var_1, var_2)
 
 
-
+#version 2
+var_1, var_2 = var_2, var_1

@@ -5,14 +5,14 @@
 # 3. Задача: написать функцию bank, принимающую аргументы X и Y и возвращающую сумму, 
 #которая будет на счету пользователя спустя Y лет.
 
-X = float(input("Input the amount of the deposit, rub: ")) #ammount
-Y = int(input("Enter the number of years for which you want to lock the deposit: ")) #years
+deposit_ammount = float(input("Input the amount of the deposit, rub: ")) #ammount
+years = int(input("Enter the number of years for which you want to lock the deposit: ")) #years
 interest_rate = 0.10
 
-def bank(X, Y):
-    for _ in range(Y):
-        X += X * interest_rate
-    return X
+def bank(deposit_ammount, years):
+    for _ in range(years):
+        deposit_ammount += deposit_ammount * interest_rate
+    return deposit_ammount
 
-result = bank(X, Y)
-print(f"The amount on the account after {Y} years will be: {result:.2f} rubles")
+result = bank(deposit_ammount, years)
+print(f"The amount on the account after {years} years will be: {result:.2f} rubles")
