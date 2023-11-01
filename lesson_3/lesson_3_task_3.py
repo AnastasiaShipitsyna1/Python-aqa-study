@@ -1,7 +1,5 @@
-from decimal import Decimal
 from address import Address
 from mailing import Mailing
-
 
 
 to_address = Address("12345", "Suva", "Bula", "lot 55", "55")
