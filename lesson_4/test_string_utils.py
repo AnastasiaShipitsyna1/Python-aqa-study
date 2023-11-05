@@ -45,7 +45,8 @@ def test_negative_capitalize(input, result):
     (" is it true?!", "is it true?!"),
     (" and@gmail.com", "and@gmail.com"),
     (" $34.887", "$34.887"),
-    (" и долго ли, коротко - шел он к своей суженной.","И долго ли, коротко - шел он к своей суженной."),
+    (" и долго ли, коротко - шел он к своей суженной.","и долго ли, коротко - шел он к своей суженной."), 
+    ("idilia", "idilia"),
     ])
 def test_positive_trim(input, result):
     res = string_utils_test.trim(input)
@@ -56,9 +57,8 @@ def test_positive_trim(input, result):
 @pytest.mark.xfail(strict=True)(reason="Negative tests")
 @pytest.mark.parametrize('input, result', [
     ("  ", " "),
+    ([" Grom", 1, True], ["Grom", 1, True],), 
     ("", ""),
-    ("idilia", "idilia"),
-    ([" Grom", 1, True], ["Grom", 1, True],)
     ])
 def test_negative_trim(input, result):
     res = string_utils_test.trim(input)
@@ -101,7 +101,6 @@ def test_positive_contains(string, symbol, expected_output):
 
 # Негативный тест
 @pytest.mark.negative
-@pytest.mark.xfail(strict=True)(reason="Negative tests")
 @pytest.mark.parametrize("string, symbol, expected_output", [
     ("SkyPro", "C", False),
     ("", "", False),
@@ -207,9 +206,9 @@ def test_negative_is_empty(string, expected_output):
 # Позитивный тест
 @pytest.mark.parametrize("lst, joiner, expected_output", [
     ([1, 2, 3, 4], ", ", "1, 2, 3, 4"),
-    ([0, -1, 5, 10], "/ ", "0 / -1 / 5 / 10"),
-    (["Sky", "Pro"], "* ", "Sky * Pro"),
-    (["Hello" "World"], "! ", "Hello ! World"),
+    ([0, -1, 5, 10], " / ", "0 / -1 / 5 / 10"),
+    (["Sky", "Pro"], " * ", "Sky * Pro"),
+    (["Hello" "World"], " ! ", "Hello ! World"),
     ([1, 2, 3, 4], "-", "1-2-3-4"),
     ([-1, -2, -3, -4], " | ", "-1 | -2 | -3 | -4"),
 ])
@@ -223,6 +222,6 @@ def test_positive_list_to_string_with_default_joiner(lst, joiner, expected_outpu
 @pytest.mark.parametrize("lst, joiner, expected_output", [
     ([], ", ", ""),
 ])
-def test_positive_list_to_string_with_default_joiner(lst, joiner, expected_output):
+def test_negative_list_to_string_with_default_joiner(lst, joiner, expected_output):
     res = string_utils_test.list_to_string(lst, joiner)
     assert res == expected_output
