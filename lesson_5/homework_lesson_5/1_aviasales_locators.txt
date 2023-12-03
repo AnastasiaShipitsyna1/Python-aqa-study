@@ -1,0 +1,15 @@
+﻿**Задание 1. Локаторы Aviasales**
+
+1. Создайте файл `aviasales-locators.txt`.
+2. Откройте сайт https://www.aviasales.ru/.
+3. Запишите в файл локаторы, перечисленные в шаге 4. 
+4. Шаблон файла для заполнения:
+
+
+Локатор логотипа (html-елемент, содержащий в себе значок и слово "авиасейлс") - <"span.s__hUp61OcxhZaQr3w4wYv9.s__sBh_0LtGspeoixytMYZg.s__kyQZdK3QHkNkIMKAtKUv.s__th_qVj2Jb9OfZ7IKY6QD.s__FsQa1CJhPISeoTYn0QxZ">
+Локатор поля Откуда - <"#avia_form_origin-input">
+Локатор поля Куда - <"#avia_form_destination-input">
+Локатор поля Когда - <button[data-test-id="start-date-field"]>
+Локатор поля Обратно - <button[data-test-id="end-date-field"]>
+Локатор чек-бокса "Открыть Ostrovok.ru в новой вкладке" - <span.s__BGUqp9s2kxbNEnDjdIYc>
+Локатор кнопки Найти билеты - <button[data-test-id="form-submit"]>
