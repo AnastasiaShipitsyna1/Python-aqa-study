@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 from time import sleep
 
 # 1. Откройте страницу http://the-internet.herokuapp.com/add_remove_elements/.
-driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
 driver.get("http://the-internet.herokuapp.com/add_remove_elements/")
 
 # 2. Пять раз кликните на кнопку `Add Element`.
@@ -29,4 +29,5 @@ delete_button_texts = [button.text for button in delete_buttons]
 # 4. Выведите на экран размер списка.
 print(delete_button_texts)
 
-sleep(15)
+sleep(3)
+driver.quit()

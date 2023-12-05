@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 
 # 1. Откройте страницу http://the-internet.herokuapp.com/login.
-driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
 driver.get("http://the-internet.herokuapp.com/login")
 
 # 2. В поле username введите значение `tomsmith`.
@@ -22,4 +22,9 @@ input_password.send_keys("SuperSecretPassword!")
 button_login = driver.find_element(By.CSS_SELECTOR, ".radius")
 button_login.click()
 
-sleep(10)
+sleep(2)
+driver.quit()
+
+
+
+

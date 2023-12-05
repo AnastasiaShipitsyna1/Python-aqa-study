@@ -12,7 +12,7 @@ from time import sleep
 
 # Шаги:
 # 1. Откройте страницу http://the-internet.herokuapp.com/entry_ad.
-driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
 driver.get("http://the-internet.herokuapp.com/entry_ad")
 
 # 2. В модальном окне дождитесь появления кнопки Close и нажмите на нее.

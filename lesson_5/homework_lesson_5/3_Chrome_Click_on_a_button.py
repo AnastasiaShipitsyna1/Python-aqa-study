@@ -32,7 +32,7 @@ delete_button_texts = [button.text for button in delete_buttons]
 print(delete_button_texts)
 
 
-sleep(15)
+sleep(3)
 
 # пояснения
 # container = driver.find_element(By.ID, 'elements'): Эта строка находит элемент на веб-странице с идентификатором "elements" (в данном случае, это <div> контейнер).

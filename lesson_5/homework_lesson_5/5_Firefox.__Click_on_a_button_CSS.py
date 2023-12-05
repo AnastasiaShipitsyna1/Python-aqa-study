@@ -11,7 +11,7 @@ from time import sleep
 for i in range(1, 4):
     print(f"Сycle №{i}")
     # 1. Откройте страницу http://uitestingplayground.com/classattr.
-    driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+    driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
     driver.get("http://uitestingplayground.com/classattr")
 
     # 2. Кликните на синюю кнопку.

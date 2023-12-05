@@ -9,7 +9,7 @@ from time import sleep
 
 # Шаги:
 # 1. Откройте страницу http://the-internet.herokuapp.com/inputs.
-driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
 driver.get("http://the-internet.herokuapp.com/inputs")
 
 # 2. Введите в поле текст `1000`.
