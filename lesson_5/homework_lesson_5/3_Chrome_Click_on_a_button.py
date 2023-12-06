@@ -7,17 +7,17 @@ from selenium.webdriver.common.by import By
 from time import sleep
 
 # Шаги:
-# 1. Откройте страницу http://the-internet.herokuapp.com/add_remove_elements/.
+# 1. Откройте страницу http://the-internet.herokuapp.com/add_remove_elements/.
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 driver.get("http://the-internet.herokuapp.com/add_remove_elements/")
 
-# 2. Пять раз кликните на кнопку `Add Element`.
+# 2. Пять раз кликните на кнопку Add Element.
 button_element = driver.find_element(By.CSS_SELECTOR, 'button[onclick="addElement()"]')
 
 for _ in range(5):
     button_element.click()
 
-# 3. Соберите со страницы список кнопок `Delete`.
+# 3. Соберите со страницы список кнопок Delete.
 
 # Находим контейнер, в котором расположены кнопки
 container = driver.find_element(By.ID, 'elements')
@@ -29,8 +29,11 @@ delete_buttons = container.find_elements(By.CSS_SELECTOR, 'button.added-manually
 delete_button_texts = [button.text for button in delete_buttons]
 
 # 4. Выведите на экран размер списка.
-print(delete_button_texts)
+print(f"Size of the list: {len(delete_button_texts)}")
 
+# 5. Выведите на экран значения в списке.
+for text in delete_button_texts:
+    print(text)
 
 sleep(3)
 
